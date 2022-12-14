@@ -1,0 +1,24 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+render = /render/default.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 960
+height = 540
+vsync = 0
+samples = 2
+high_dpi = 1
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = 3d-walker
+dependencies#0 = https://github.com/britzl/monarch/archive/refs/tags/3.7.0.zip
+
+[physics]
+type = 3D
+
