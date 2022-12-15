@@ -36,7 +36,7 @@ local function set_light(self)
 end
 
 function init(self)
-	self.view = { x = 0, y = 0, w = 1, h = 1, transform = vmath.matrix4() }
+	self.view = vmath.matrix4()
 
 	self.yaw   = 0
 	self.pitch = 45
@@ -68,6 +68,11 @@ function init(self)
 	msg.post("@render:", "set_light_transform",  { transform  = self.light_transform, light = light})
 	msg.post("@render:", "set_near_far",         { near = 1, far = 100 })
 
+	msg.post('/operator/operator#operator', hash('follow_point'), {
+		object = '/character',
+		position = vmath.vector3()
+	})
+
 	set_light(self)
 end
 
@@ -75,8 +80,8 @@ function update(self, dt)
 	self.time = self.time + dt
 	
 	-- Update camera
-	self.view.transform = get_matrix_from_rot_zoom(get_rotation_from_yaw_pitch(self.yaw, self.pitch), self.zoom)
-	msg.post("@render:", "set_view", self.view)
+	self.view = get_matrix_from_rot_zoom(get_rotation_from_yaw_pitch(self.yaw, self.pitch), self.zoom)
+	msg.post("@render:", "set_view", {view = self.view})
 
 	-- Update scene
 	local pos        = go.get_position("/shadow_sphere")
