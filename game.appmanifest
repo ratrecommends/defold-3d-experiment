@@ -1,88 +1,88 @@
 platforms:
   armv7-ios:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [physics, Box2D, record, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       frameworks: []
       linkFlags: []
   arm64-ios:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [physics, Box2D, record, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       frameworks: []
       linkFlags: []
   x86_64-ios:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [physics, Box2D, record, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       frameworks: []
       linkFlags: []
   armv7-android:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
+      excludeLibs: [physics, Box2D, record, vpx]
       excludeJars: []
-      excludeSymbols: [ProfilerExt]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       linkFlags: []
       jetifier: true
   arm64-android:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
+      excludeLibs: [physics, Box2D, record, vpx]
       excludeJars: []
-      excludeSymbols: [ProfilerExt]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       linkFlags: []
       jetifier: true
   x86_64-osx:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [physics, Box2D, record, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       frameworks: []
       linkFlags: []
   x86_64-linux:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [physics, Box2D, record, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       linkFlags: []
   x86-win32:
     context:
-      excludeLibs: [libphysics, libBox2D, libprofilerext, librecord, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [libphysics, libBox2D, librecord, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [libphysics_3d.lib, libprofilerext_null.lib, librecord_null.lib]
+      libs: [libphysics_3d.lib, librecord_null.lib]
       linkFlags: []
   x86_64-win32:
     context:
-      excludeLibs: [libphysics, libBox2D, libprofilerext, librecord, vpx]
-      excludeSymbols: [ProfilerExt]
+      excludeLibs: [libphysics, libBox2D, librecord, vpx]
+      excludeSymbols: []
       symbols: []
-      libs: [libphysics_3d.lib, libprofilerext_null.lib, librecord_null.lib]
+      libs: [libphysics_3d.lib, librecord_null.lib]
       linkFlags: []
   js-web:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
+      excludeLibs: [physics, Box2D, record, vpx]
       excludeJsLibs: []
-      excludeSymbols: [ProfilerExt]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       linkFlags: []
   wasm-web:
     context:
-      excludeLibs: [physics, Box2D, profilerext, record, vpx]
+      excludeLibs: [physics, Box2D, record, vpx]
       excludeJsLibs: []
-      excludeSymbols: [ProfilerExt]
+      excludeSymbols: []
       symbols: []
-      libs: [physics_3d, profilerext_null, record_null]
+      libs: [physics_3d, record_null]
       linkFlags: []

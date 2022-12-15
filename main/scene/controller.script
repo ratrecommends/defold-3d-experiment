@@ -36,6 +36,7 @@ local function set_light(self)
 end
 
 function init(self)
+	-- profiler.enable_ui(true)
 	self.view = vmath.matrix4()
 
 	self.yaw   = 0
@@ -69,8 +70,11 @@ function init(self)
 	msg.post("@render:", "set_near_far",         { near = 1, far = 100 })
 
 	msg.post('/operator/operator#operator', hash('follow_point'), {
-		object = '/character',
-		position = vmath.vector3()
+		object = '/eyes',
+		position = vmath.vector3(0, 0, 0)
+	})
+	msg.post('/character#walker', hash('follow_camera'), {
+		camera = '/operator/operator#operator'
 	})
 
 	set_light(self)

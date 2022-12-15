@@ -157,8 +157,10 @@ function on_message(self, message_id, message)
         self.light = message.light
     elseif message_id == hash("set_light_projection") then
         self.light_projection = message.projection
-    elseif message_id == hash("set_view") then
+    elseif message_id == hash("set_view_projection") then
         self.view = message.view
+        self.proj = message.projection
+        -- print(message.projection)
     elseif message_id == hash("set_near_far") then
         self.near = message.near
         self.far = message.far
