@@ -1,3 +1,5 @@
+![Screenshot](screenshot.png)
+
 Demo: https://ratrecommends.github.io/defold-3d-experiment/
 
 Controls: WASD+Space+mouse rotation
