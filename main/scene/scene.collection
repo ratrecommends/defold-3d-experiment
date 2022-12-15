@@ -16,6 +16,8 @@ embedded_instances {
   "    z: 0.0\n"
   "    w: 1.0\n"
   "  }\n"
+  "  property_decls {\n"
+  "  }\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"factory\"\n"
@@ -58,6 +60,7 @@ embedded_instances {
   children: "go"
   children: "go1"
   children: "go10"
+  children: "go11"
   children: "go2"
   children: "go3"
   children: "go4"
@@ -146,7 +149,7 @@ embedded_instances {
   "  data: \"collision_shape: \\\"\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_STATIC\\n"
   "mass: 0.0\\n"
-  "friction: 0.1\\n"
+  "friction: 0.9\\n"
   "restitution: 0.5\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
@@ -283,7 +286,7 @@ embedded_instances {
   "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
   "mass: 1.0\\n"
   "friction: 0.7\\n"
-  "restitution: 0.8\\n"
+  "restitution: 0.2\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
@@ -1646,7 +1649,7 @@ embedded_instances {
   "name: \\\"unnamed\\\"\\n"
   "\"\n"
   "  position {\n"
-  "    x: 0.0\n"
+  "    x: -11.0\n"
   "    y: 0.0\n"
   "    z: 0.0\n"
   "  }\n"
@@ -1661,7 +1664,7 @@ embedded_instances {
   position {
     x: 29.0
     y: 1.0
-    z: 15.0
+    z: -11.0
   }
   rotation {
     x: 0.0
@@ -1683,8 +1686,8 @@ embedded_instances {
   "  data: \"collision_shape: \\\"\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_STATIC\\n"
   "mass: 0.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
+  "friction: 0.9\\n"
+  "restitution: 0.9\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
@@ -1708,8 +1711,8 @@ embedded_instances {
   "  data: 1.0\\n"
   "  data: 1.0\\n"
   "}\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
+  "linear_damping: 0.8\\n"
+  "angular_damping: 0.8\\n"
   "locked_rotation: false\\n"
   "bullet: false\\n"
   "\"\n"
@@ -2017,7 +2020,7 @@ embedded_instances {
   position {
     x: 2.0
     y: 2.0
-    z: -3.0
+    z: -7.0
   }
   rotation {
     x: 0.0
@@ -3446,12 +3449,6 @@ embedded_instances {
   "  z: 0.0\\n"
   "  w: 0.0\\n"
   "}\\n"
-  "scale {\\n"
-  "  x: 0.05\\n"
-  "  y: 0.05\\n"
-  "  z: 0.05\\n"
-  "  w: 0.0\\n"
-  "}\\n"
   "color {\\n"
   "  x: 1.0\\n"
   "  y: 1.0\\n"
@@ -3490,6 +3487,11 @@ embedded_instances {
   "    z: 0.0\n"
   "    w: 1.0\n"
   "  }\n"
+  "  scale {\n"
+  "    x: 0.05\n"
+  "    y: 0.05\n"
+  "    z: 0.05\n"
+  "  }\n"
   "}\n"
   ""
   position {
@@ -3507,5 +3509,116 @@ embedded_instances {
     x: 1.0
     y: 1.0
     z: 1.0
+  }
+}
+embedded_instances {
+  id: "go11"
+  children: "go13"
+  data: "embedded_components {\n"
+  "  id: \"collisionobject1\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
+  "mass: 1.0\\n"
+  "friction: 0.7\\n"
+  "restitution: 0.2\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_CAPSULE\\n"
+  "    position {\\n"
+  "      x: 0.0\\n"
+  "      y: 2.0\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0010828776\\n"
+  "      y: -0.0020367794\\n"
+  "      z: -0.0026723067\\n"
+  "      w: 0.99999374\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 2\\n"
+  "  }\\n"
+  "  data: 1.0\\n"
+  "  data: 2.0\\n"
+  "}\\n"
+  "linear_damping: 0.5\\n"
+  "angular_damping: 0.5\\n"
+  "locked_rotation: true\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 10.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "go13"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/untitled.gltf\\\"\\n"
+  "material: \\\"/assets/materials/diffuse.material\\\"\\n"
+  "textures: \\\"/assets/Material_baseColor.png\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"unnamed\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+    z: 2.0
   }
 }
