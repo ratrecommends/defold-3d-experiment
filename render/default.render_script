@@ -29,13 +29,12 @@ function init(self)
     self.particle_pred     = render.predicate({"particle"})
 
     self.clear_color = vmath.vector4(0.4, 0.4, 0.5, 0.4)
-    self.view        = vmath.matrix4()
+    self.view        = { x = 0, y = 0, w = 1, h = 1, transform = vmath.matrix4()}
 
     self.near = -1
     self.far  = 1
     self.zoom = 1
 
-    self.views = {}
     self.proj = vmath.matrix4()
 
     self.light_buffer          = create_depth_buffer(4096,4096)
@@ -50,9 +49,10 @@ function init(self)
     self.bias_matrix.c3 = vmath.vector4(0.5, 0.5, 0.5, 1.0)
 end
 
-function render_view(self, view)    
+function render_view(self)    
     local w = render.get_window_width()
     local h = render.get_window_height()
+    local view = self.view
     
     render.set_viewport(view.x * w, view.y * h, view.w * w, view.h * h)
     render.set_view(view.transform)
@@ -112,10 +112,7 @@ function render_scene(self)
     render.disable_state(render.STATE_STENCIL_TEST)
     render.enable_state(render.STATE_BLEND)
     render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
-
-    for k, v in pairs(self.views) do
-        render_view(self,v)
-    end
+    render_view(self)
 end
 
 function render_shadows(self)
@@ -161,7 +158,7 @@ function on_message(self, message_id, message)
     elseif message_id == hash("set_light_projection") then
         self.light_projection = message.projection
     elseif message_id == hash("set_view") then
-        self.views = message
+        self.view = message
     elseif message_id == hash("set_near_far") then
         self.near = message.near
         self.far = message.far

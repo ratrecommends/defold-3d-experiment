@@ -36,8 +36,7 @@ local function set_light(self)
 end
 
 function init(self)
-	self.views    = {}
-	self.views[1] = { x = 0, y = 0, w = 1, h = 1, transform = vmath.matrix4() }
+	self.view = { x = 0, y = 0, w = 1, h = 1, transform = vmath.matrix4() }
 
 	self.yaw   = 0
 	self.pitch = 45
@@ -76,8 +75,8 @@ function update(self, dt)
 	self.time = self.time + dt
 	
 	-- Update camera
-	self.views[1].transform = get_matrix_from_rot_zoom(get_rotation_from_yaw_pitch(self.yaw,self.pitch), self.zoom)
-	msg.post("@render:", "set_view", self.views)
+	self.view.transform = get_matrix_from_rot_zoom(get_rotation_from_yaw_pitch(self.yaw, self.pitch), self.zoom)
+	msg.post("@render:", "set_view", self.view)
 
 	-- Update scene
 	local pos        = go.get_position("/shadow_sphere")

@@ -57,10 +57,10 @@ embedded_instances {
 }
 embedded_instances {
   id: "shadow_group"
+  children: "character"
   children: "go"
   children: "go1"
   children: "go10"
-  children: "go11"
   children: "go2"
   children: "go3"
   children: "go4"
@@ -3512,14 +3512,41 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go11"
+  id: "character"
   children: "go13"
-  data: "embedded_components {\n"
-  "  id: \"collisionobject1\"\n"
+  data: "components {\n"
+  "  id: \"walker\"\n"
+  "  component: \"/main/walker.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"jump_power\"\n"
+  "    value: \"30.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"gravity\"\n"
+  "    value: \"0.0, -20.0, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR3\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collision_standing\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
-  "mass: 1.0\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
   "friction: 0.7\\n"
   "restitution: 0.2\\n"
   "group: \\\"default\\\"\\n"
@@ -3564,7 +3591,7 @@ embedded_instances {
   ""
   position {
     x: 0.0
-    y: 10.0
+    y: 12.0
     z: 0.0
   }
   rotation {
@@ -3612,9 +3639,9 @@ embedded_instances {
   }
   rotation {
     x: 0.0
-    y: 0.0
+    y: 1.0
     z: 0.0
-    w: 1.0
+    w: 6.123234E-17
   }
   scale3 {
     x: 2.0
